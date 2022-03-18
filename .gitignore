@@ -1,0 +1,6 @@
+node_modules/
+parser.ts
+tsconfig.json
+tslint.json
+parser.js.map
+example/
