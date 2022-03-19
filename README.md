@@ -13,6 +13,14 @@ parser.parse(`//some string`);
 ```ts
 const parse = (code:string) => data:Array<Token>
 ```
+### .getType
+```ts
+const parse = (code:string) => data:TokenType
+```
+### .makeCode
+```ts
+const makeCode = (code:Array<Token>) => data:string
+```
 ### .Token
 ```ts
 class Token {
@@ -24,7 +32,9 @@ class Token {
 ```ts
 enum TokenType {
     command,
-    string,
+    string_u, // `string`
+    string_o, // 'string'
+    string_t, // "string"
     number,
 
     sb_start, // (
@@ -57,6 +67,8 @@ enum TokenType {
     big,      // >
     big_s,    // >=
     small,    // <
+    se,       // />
+    ee,       // </
     small_s,  // <=
     pow,      // ^
     pow_o,    // **
